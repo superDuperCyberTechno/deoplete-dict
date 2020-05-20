@@ -17,6 +17,7 @@ class Source(Base):
         except pynvim.api.common.NvimError:
             return candidates
         
+        minidict_dir = minidict_dir.rstrip('/')
         dicts = [f for f in os.listdir(minidict_dir) if os.path.isfile(os.path.join(minidict_dir, f))]
         
         for dict in dicts:

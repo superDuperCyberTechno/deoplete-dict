@@ -13,7 +13,7 @@ class Source(Base):
         
         try:
             minidict_dir = self.vim.eval('g:minidict_dir')
-        except Error:
+        except NvimError:
             return candidates
         
         dicts = [f for f in os.listdir(minidict_dir) if os.path.isfile(os.path.join(minidict_dir, f))]

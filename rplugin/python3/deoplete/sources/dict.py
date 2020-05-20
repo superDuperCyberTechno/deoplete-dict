@@ -14,7 +14,7 @@ class Source(Base):
 
         candidates = []
         for dict in dicts:
-            dict = open(dir+'/'+dict,'r').read().split('\n')
+            dict = open(self.dict_dir + '/' + dict, 'r').read().split('\n')
             candidates = candidates + dict[0:-1]
 
         candidates = list(set(candidates))

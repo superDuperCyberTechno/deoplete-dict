@@ -11,9 +11,13 @@ class Source(Base):
         self.dict_dir = self.vim.eval('g:dict_dir')
 
     def gather_candidates(self, context):
-        dicts = [f for f in os.listdir(self.dict_dir) if os.path.isfile(os.path.join(self.dict_dir, f))]
-
         candidates = []
+        
+        if not self.minisnip_dir:
+            return candidates
+        
+        dicts = [f for f in os.listdir(self.dict_dir) if os.path.isfile(os.path.join(self.dict_dir, f))]
+        
         for dict in dicts:
             dict = open(self.dict_dir + '/' + dict, 'r').read().split('\n')
             candidates = candidates + dict[0:-1]

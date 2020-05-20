@@ -11,9 +11,9 @@ class Source(Base):
     def gather_candidates(self, context):
         candidates = []
         
-        if self.vim.eval('g:minidict_dir'):
+        try:
             minidict_dir = self.vim.eval('g:minidict_dir')
-        else:
+        except Error:
             return candidates
         
         dicts = [f for f in os.listdir(minidict_dir) if os.path.isfile(os.path.join(minidict_dir, f))]

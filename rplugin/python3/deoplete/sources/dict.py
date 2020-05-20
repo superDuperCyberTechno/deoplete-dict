@@ -5,6 +5,7 @@ class Source(Base):
     def __init__(self, vim):
         Base.__init__(self, vim)
 
+        self.rank = 1000
         self.name = 'dict'
         self.mark = '[D]'
         self.dict_dir = self.vim.eval('g:dict_dir')

@@ -6,7 +6,7 @@ class Source(Base):
     def __init__(self, vim):
         Base.__init__(self, vim)
         self.rank = 1000
-        self.name = 'dict'
+        self.name = 'minidict'
         self.mark = '[D]'
 
     def gather_candidates(self, context):

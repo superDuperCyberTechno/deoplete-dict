@@ -8,7 +8,7 @@ class Source(Base):
         self.rank = 1000
         self.name = 'dict'
         self.mark = '[D]'
-        self.minidict_dir = self.vim.eval('g:dict_dir')
+        self.minidict_dir = self.vim.eval('g:minidict_dir')
 
     def gather_candidates(self, context):
         candidates = []

@@ -1,4 +1,5 @@
 import os
+import pynvim
 from .base import Base
 
 class Source(Base):
